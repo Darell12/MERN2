@@ -1,5 +1,7 @@
 //https://mongoosejs.com/
 // npm i mongoose
+
+//:ENV MONGO_URI=mongodb+srv://Darell:1234@cluster0.cllomgd.mongodb.net/appecommerce?retryWrites=true&w=majority
 import mongoose from 'mongoose';
 
 const conectarDB = async () =>{
