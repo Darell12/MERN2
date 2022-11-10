@@ -1,5 +1,8 @@
 import express from 'express';
 import dotenv from 'dotenv'
+import cors from 'cors';
+import fileupload from 'express-fileupload';
+
 import conectarDB from './config/db.js'
 import usuariosRoutes from './routes/usuarioRoutes.js'
 import productosRoutes from './routes/productoRoutes.js'
@@ -10,6 +13,11 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
+
+app.use(fileupload({
+    useTempFiles: true,
+    tempFileDir: './files'
+}))
 
 conectarDB();
 
