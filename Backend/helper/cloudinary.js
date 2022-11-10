@@ -1,20 +1,22 @@
-import { v2 as cloudinary } from 'cloudinary';
+import { v2 as cloudinary } from "cloudinary";
 import dotenv from 'dotenv';
-
 dotenv.config();
-
 cloudinary.config({
-    cloud_name: procces.env.CLOUDINARY_NAME,
-    api_key: procces.env.CLOUDINARY_KEY,
-    api_secret: procces.env.CLOUDINARY_SECRET
+    cloud_name: "dt3vtf04i",
+    api_key: "778696854623278",
+    api_secret: "YJgz8l3dkS3v_PAkhKlXM0CJPqU"
 })
-
 export const uploadImage = async filePath => {
-    return await cloudinary.uploader.upload(filePath, {
-        folder: 'productos'
-    }); 
+return await cloudinary.uploader.upload(filePath, {
+folder: 'productos'
+});
+};
+export const deleteImage = async id => {
+return await cloudinary.uploader.destroy(id);
 };
 
-export const deleteImage = async id => {
-    return await cloudinary.uploader.destroy(id);
-};
+// cloudinary.config({
+//     cloud_name: "dt3vtf04i",
+//     api_key: "778696854623278",
+//     api_secret: "YJgz8l3dkS3v_PAkhKlXM0CJPqU"
+// })

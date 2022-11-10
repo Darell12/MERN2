@@ -9,6 +9,6 @@ const router = express.Router();
 
 //rutas publicas
 router.get('/prueba', prueba);
-router.get('/', registrar);
+router.post('/', registrar);
 router.get('/confirmar/:token', confirmar);
 export default router;

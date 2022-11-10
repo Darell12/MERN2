@@ -1,24 +1,22 @@
-import  express  from "express";
+import express from 'express';
 import {
     prueba,
-    getProducto,
     deleteProductos,
+    getProducto,
     getProductos,
     createProductos,
     updateProductos
-} from '../controllers/productoController.js'
+} from '../controllers/productoController.js';
 
 const router = express.Router();
 
-//Ruta Publica
+// Rutas Publicas
+
 router.get('/prueba', prueba);
-
-//RUTAS DE GESTION PRODUCTOS
-router.get('/productos', getProductos);
-router.get('/productos/:id', getProducto);
-router.post('/productos', createProductos);
-router.put('/productos/:id', updateProductos);
-router.delete('/productos/:id', deleteProductos);
-
-
-export default router
+// Rutas Gestión Producto
+router.get('/get', getProductos);
+router.get('/get/:id', getProducto);
+router.post('/create', createProductos);
+router.put('/update/:id', updateProductos);
+router.delete('/delete/:id', deleteProductos);
+export default router;

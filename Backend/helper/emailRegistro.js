@@ -5,12 +5,11 @@ dotenv.config();
 
 const emailRegistro = async (datos) => {
     const transport = nodemailer.createTransport({
-        host: procces.env.EMAIL_HOST,
-        port: procces.env.EMAIL_PORT,
+        host: "smtp.mailtrap.io",
+        port: 2525,
         auth: {
-            //type "OAuth2"
-            user: procces.env.EMAIL_USER,
-            pass: procces.env.EMAIL_PASS,
+          user: "cfa374a1fa785f",
+          pass: "6ae08ce8d52e5b"
         }
     });
 
