@@ -1,15 +1,14 @@
 import nodemailer from 'nodemailer'
-import dotenv from 'dotenv';
-
-dotenv.config();
+import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+dotenv.config()
 
 const emailRegistro = async (datos) => {
     const transport = nodemailer.createTransport({
-        host: "smtp.mailtrap.io",
-        port: 2525,
+        host: process.env.EMAIL_HOST,
+        port: process.env.EMAIL_PORT,
         auth: {
-          user: "cfa374a1fa785f",
-          pass: "6ae08ce8d52e5b"
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS
         }
     });
 

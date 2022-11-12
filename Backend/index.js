@@ -21,6 +21,27 @@ app.use(fileupload({
 
 conectarDB();
 
+const whitelist = ['http://127.0.0.1:5173']
+
+app.use(cors({
+    origin: whitelist
+}));
+
+
+// const dominiosPermitidos = [process.env.FRONT_URL];
+// const corsOptions = {
+//         origin: function(origin, callback){
+//          if(dominiosPermitidos.indexOf(origin) !== -1){
+// // El origen del Request esta permitido
+//          callback(null, true);
+//         }else{
+//          callback(new Error('No permitido por CORS'));
+//         }
+//     }
+// };
+
+// app.use(cors(corsOptions)); 
+
 //GESTION USUARIOS
 app.use('/api/usuarios', usuariosRoutes);
 

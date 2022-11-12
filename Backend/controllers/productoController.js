@@ -15,9 +15,11 @@ const prueba = (req, res) => {
 
 const createProductos = async (req, res) => {
 try {
-    const { nombre, descripcion, precio, stock } = req.body;let image;
+    const { nombre, descripcion, precio, stock } = req.body;
+    let image;
 if (req.files.image) {
-    const result = await uploadImage(req.files.image.tempFilePath);await fs.remove(req.files.image.tempFilePath);image = {
+    const result = await uploadImage(req.files.image.tempFilePath);
+    await fs.remove(req.files.image.tempFilePath);image = {
         url: result.secure_url,
         public_id: result.public_id,
         };
