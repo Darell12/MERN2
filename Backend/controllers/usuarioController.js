@@ -10,7 +10,6 @@ const prueba = (req, res) => {
 const registrar = async (req, res) => {
 
     const {nombre, email, password, telefono, direccion, web} = req.body;
-
     //Validar Usuario Duplicado
     //FindOne busca en los usuarios de la coleccion atributos duplicados
     const existeUsuario = await Usuario.findOne({email});

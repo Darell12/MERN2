@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import cors from 'cors';
 import fileupload from 'express-fileupload';
 
+
 import conectarDB from './config/db.js'
 import usuariosRoutes from './routes/usuarioRoutes.js'
 import productosRoutes from './routes/productoRoutes.js'
@@ -21,26 +22,26 @@ app.use(fileupload({
 
 conectarDB();
 
-const whitelist = ['http://127.0.0.1:5173']
+// const whitelist = ['http://127.0.0.1:5173']
 
-app.use(cors({
-    origin: whitelist
-}));
+// app.use(cors({
+//     origin: whitelist
+// }));
 
 
-// const dominiosPermitidos = [process.env.FRONT_URL];
-// const corsOptions = {
-//         origin: function(origin, callback){
-//          if(dominiosPermitidos.indexOf(origin) !== -1){
-// // El origen del Request esta permitido
-//          callback(null, true);
-//         }else{
-//          callback(new Error('No permitido por CORS'));
-//         }
-//     }
-// };
+ const dominiosPermitidos = [process.env.FRONTEND_URL];
+ const corsOptions = {
+         origin: function(origin, callback){
+         if(dominiosPermitidos.indexOf(origin) !== -1){
+//El origen del Request esta permitido
+          callback(null, true);
+        }else{
+          callback(new Error('No permitido por CORS'));
+       }
+     }
+ };
 
-// app.use(cors(corsOptions)); 
+app.use(cors(corsOptions)); 
 
 //GESTION USUARIOS
 app.use('/api/usuarios', usuariosRoutes);

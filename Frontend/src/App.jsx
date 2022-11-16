@@ -1,41 +1,28 @@
-import {Routes,Route,BrowserRouter} from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import LayoutAuth from './Layout/LayoutAuth'
+import Login from './Pages/Login'
+import Confirmar from './Pages/usuario/Confirmar'
+import OlvidePassword from './Pages/usuario/OlvidePassword'
+import Registro from './Pages/usuario/Registro'
 
-
-
-import Layout from "./Layout/Layout"
-
-import Login from "./Pages/Login"
-import Registro from "./Pages/Registro"
-import Forgot from "./Pages/Forgot"
-import Acercade from "./Pages/Acercade"
 
 function App() {
-
-  
 
 
 
   return (
-    <>
-    <BrowserRouter>
-    
-    <Routes>
+    <Router>
+      <Routes>
 
-    <Route path="/" element={<Layout/>}>  
-    <Route path="/acerca-de" element={<Acercade/>} />
-    <Route path="/login" element={<Login/>} />
-    <Route path="/registro" element={<Registro/>} />
-    <Route path="/olvide-clave" element={<Forgot/>} />
-    </Route>
-
-    
-
-    
-    </Routes>
-
-    </BrowserRouter>
-
-    </>
+{/*RUTAS PUBLICAS*/}
+        <Route path='/'element={<LayoutAuth />}>
+          <Route  index element={<Login/>} />
+          <Route path='registro' element={<Registro/>}/>
+          <Route path='olvide-password' element={<OlvidePassword/>}/>
+          <Route path='confirmar/:id' element={<Confirmar/>}/>
+        </Route>
+      </Routes>
+    </Router>
   )
 }
 
