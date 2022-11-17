@@ -19,5 +19,4 @@ router.get('/get', getVentas);
 router.get('/get/:id', getVenta);
 router.put('/update/:id', updateVentas);
 
-
 export default router

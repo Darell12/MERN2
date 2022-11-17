@@ -22,11 +22,10 @@ const emailRegistro = async (datos) => {
         html: `<p>Hola: ${nombre}, comprueba tu cuenta AEC. </p>
                 <p>Tu cuenta ya esta lista, solo debes comprobarla en el siguiente enlace:
                 
-                <a> href="${process.env.FRONTEND_URL}/confirmar/${token}"</a></p>
+                <a href="${process.env.FRONTEND_URL}/confirmar/${token}">Confirme aquí</a></p>
                 
                 <p> Si tu no creates esta cuenta, puedes ignorar este mensaje</p>`
     });
-
     //console.log("Mensaje enviado: %s, info.messageId");
 
 };
