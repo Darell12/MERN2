@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import clienteAxios from '../../config/axios'
+
 import Alerta from '../../components/Alerta'
+
 import imagenRegistro from '../../assets/imagen-registro.png'
 import cajaCarton from '../../assets/caja-de-carton.png'
 

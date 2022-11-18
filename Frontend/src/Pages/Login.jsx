@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import clienteAxios from '../config/axios'
+
 import Alerta from '../components/Alerta'
-import clienteAxios from 'axios'
+
 import imgLogin from '../assets/imagen-login.png'
 import fondoLogin from '../assets/fondo-login.png'
 
@@ -23,7 +25,7 @@ const Login = () => {
 
         setAlerta({});
 
-        //CREANDO USUARIO EN LA API
+        //LOGIN EN LA API
 
         try {
             
